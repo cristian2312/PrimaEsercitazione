@@ -1,0 +1,8 @@
+<ul>
+    <li *ngFor="let menuItem of menuItems" >
+        <span>
+            {{menuItem.descrizione}}
+        </span>
+        <button (click)="selectMenuItem(menuItem.id)">aaa</button>
+    </li>
+</ul>

@@ -1,0 +1,9 @@
+<ul>
+    <li *ngFor="let gameItem of gameItems" >
+        <span>
+            {{gameItem.nome}}
+    
+        </span>
+       <button (click)="selectGameItem(gameItem.descrizione)">{{gameItem.descrizione}}</button>
+    </li>
+</ul>
