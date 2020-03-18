@@ -1,6 +1,9 @@
-<!--
+<html>
 <head>
   <style>
+    body {
+      background-color: rgb(80, 255, 246);
+    }
   ul {
     list-style-type: none;
     margin: 0;
@@ -38,9 +41,7 @@
     <li><a href="#contact">Contact</a></li>
     <li><a href="#about">About</a></li>
   </ul>
-  <body>
-  </body>
-  -->
+ 
   <app-menu-component (selectMenuId)="currentsection = $event"></app-menu-component>
   <div [ngSwitch]="currentsection">
     <app-home  *ngSwitchCase="1"> </app-home>
@@ -48,8 +49,8 @@
     <app-edit-game-component *ngSwitchCase="3"></app-edit-game-component>
     <app-game-detail-component *ngSwitchCase="4"></app-game-detail-component>
   </div>
-
-   
+</body>
+</html>
  
 
 
