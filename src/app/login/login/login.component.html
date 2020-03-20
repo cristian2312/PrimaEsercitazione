@@ -1,0 +1,29 @@
+<!--<form >
+    <div >  
+                <form method="post" name="" >
+                    Username: <input type="text" name="nome" placeholder="username"><br>
+                    Password: <input type="password" name="password"><br>
+                    <input type="submit" name="invia" value="invia">
+                    </form>
+    </div>
+</form>	-->
+<form (submit)="OnClickLogin()" >
+    <div >
+        <label >Name:</label>
+        <input type="text" name="name" [(ngModel)]="name"  >
+    </div>
+    <div >
+        <label>Password:</label>
+        <input type="password" name="password" [(ngModel)]="password" >
+    </div>
+    <div >
+        
+        <button type="submit" >
+            Process Form
+        </button>
+    
+    </div>
+</form>
+<ul>
+    <li routerLink="/home" routerLinkActive="active">Torna alla home</li>
+    </ul>

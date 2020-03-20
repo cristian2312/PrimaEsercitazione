@@ -12,6 +12,7 @@ export class MenuComponentComponent implements OnInit {
 
     @Output()
     selectMenuId: EventEmitter<number> =new EventEmitter();
+
     menuItems: MenuItem[]= [
       {
         id:1,   descrizione: 'home', selezionato: true
@@ -28,12 +29,21 @@ export class MenuComponentComponent implements OnInit {
         id:4,   descrizione: 'detail', selezionato: true
       }
     ]*/
+    menuItems: MenuItem[] = [
+      {
+        id: 1, descrizione: 'Home', url: '/portale/home'
+      },
+      {
+        id: 2, descrizione: 'Lista Videogiochi', url: '/portale/game-list-component'
+      },
+      {
+        id: 3, descrizione: 'Modifica', url: '/portale/edit-game-component'
+      },
+      
+    ];
   constructor() { }
 
   ngOnInit(): void {
   }
   
- // selectMenuItem(id:number){
- //   this.selectMenuId.emit(id);
-  //}
 }
