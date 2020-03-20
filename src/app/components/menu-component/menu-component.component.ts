@@ -8,7 +8,7 @@ import { MenuItem } from 'src/app/model/menu-item';
   styleUrls: ['./menu-component.component.scss']
 })
 export class MenuComponentComponent implements OnInit {
-
+/*
 
     @Output()
     selectMenuId: EventEmitter<number> =new EventEmitter();
@@ -27,13 +27,13 @@ export class MenuComponentComponent implements OnInit {
       {
         id:4,   descrizione: 'detail', selezionato: true
       }
-    ]
+    ]*/
   constructor() { }
 
   ngOnInit(): void {
   }
   
-  selectMenuItem(id:number){
-    this.selectMenuId.emit(id);
-  }
+ // selectMenuItem(id:number){
+ //   this.selectMenuId.emit(id);
+  //}
 }

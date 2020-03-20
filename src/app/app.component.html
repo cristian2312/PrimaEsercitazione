@@ -1,3 +1,4 @@
+<!--
 <html>
 <head>
   <style>
@@ -41,7 +42,13 @@
     <li><a href="#contact">Contact</a></li>
     <li><a href="#about">About</a></li>
   </ul>
- 
+-->
+
+  <app-menu-component></app-menu-component>
+  <router-outlet></router-outlet>
+
+
+  <!--
   <app-menu-component (selectMenuId)="currentsection = $event"></app-menu-component>
   <div [ngSwitch]="currentsection">
     <app-home  *ngSwitchCase="1"> </app-home>
@@ -50,7 +57,7 @@
     <app-game-detail-component *ngSwitchCase="4"></app-game-detail-component>
   </div>
 </body>
-</html>
+</html>-->
  
 
 

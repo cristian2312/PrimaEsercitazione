@@ -1,8 +1,15 @@
-<ul>
-    <li *ngFor="let menuItem of menuItems" >
+<!--<ul>
+        <li *ngFor="let menuItem of menuItems" >
         <span>
             {{menuItem.descrizione}}
         </span>
-        <button (click)="selectMenuItem(menuItem.id)">aaa</button>
-    </li>
-</ul>
+        <button (click)="selectMenuItem(menuItem.id)">aaa</button>    </li>
+</ul>-->
+        <ul>
+            <li routerLink="/home" routerLinkActive="active">home</li>
+            <li routerLink="/game-list-component" routerLinkActive="active">Game List</li>
+            <li routerLink="/edit-game-component" routerLinkActive="active">Edit game</li>
+            <li routerLink="/game-detail-component" routerLinkActive="active">Game detail</li>
+         
+        </ul>
+   
