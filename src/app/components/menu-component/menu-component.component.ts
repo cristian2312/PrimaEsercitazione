@@ -1,7 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MenuItem } from 'src/app/model/menu-item';
 import { Router } from '@angular/router';
-import { stringify } from 'querystring';
+import { LoginComponent } from 'src/app/login/login/login.component';
+import { LoginService } from 'src/app/services/loginservice/login.service';
+
 
 
 @Component({
@@ -10,7 +12,8 @@ import { stringify } from 'querystring';
   styleUrls: ['./menu-component.component.scss']
 })
 export class MenuComponentComponent implements OnInit {
-  
+  icona:string;
+  showLogin: boolean;
     menuItems: MenuItem[] = [
       {
         id: 1, descrizione: 'Home', url: '/portale/home'
@@ -26,23 +29,31 @@ export class MenuComponentComponent implements OnInit {
       },
       
     ];
-  constructor(private router:Router) {
-    
-
+  constructor(private router:Router,private loginService:LoginService) {
+   this.loginService.loggedUser$.subscribe(value =>{
+      this.icona=sessionStorage.getItem('name');
+     // this.checkLogin();
+    })
    }
     
   ngOnInit(): void {
    
   }
+  checkLogin() {
+
+    this.icona = sessionStorage.getItem('name') != null ? 'A' :
+      (sessionStorage.getItem('name') != null ? 'U' : '');
+this.showLogin = sessionStorage.getItem('name')==null && sessionStorage.getItem('admin')==null;
+  }
   logout(){
-    sessionStorage.removeItem('name');
+    sessionStorage.clear();
     this.router.navigateByUrl('/login');
 
   }
-
-  textUser(){
-    
- 
-
+  public onClickLogout() {
+    sessionStorage.clear()
+    this.checkLogin();
+    this.router.navigateByUrl('/login');
   }
+
 }

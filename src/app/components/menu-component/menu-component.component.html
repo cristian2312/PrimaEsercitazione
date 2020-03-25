@@ -36,10 +36,12 @@
     }
     </style>
     </head>
+    
+      
     <body>
 <ul>
-    <li *ngFor="let menuItem of menuItems" routerLink='{{menuItem.url}}' routerLinkActive="active">
-        <a>
+    <li *ngFor="let menuItem of menuItems" routerLink='{{menuItem.url}}' routerLinkActive="active" >
+        <a >
             {{menuItem.descrizione}}
         </a>
         
@@ -48,7 +50,7 @@
     <a (click)="logout()">Logout</a>
   </li>
   <li>
-    <a class="active"></a>
+    <a>{{icona}}</a>
   </li>
     
 </ul>
