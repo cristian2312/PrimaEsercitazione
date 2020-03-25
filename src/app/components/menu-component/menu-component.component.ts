@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MenuItem } from 'src/app/model/menu-item';
+import { Router } from '@angular/router';
+import { stringify } from 'querystring';
 
 
 @Component({
@@ -8,27 +10,7 @@ import { MenuItem } from 'src/app/model/menu-item';
   styleUrls: ['./menu-component.component.scss']
 })
 export class MenuComponentComponent implements OnInit {
-/*
-
-    @Output()
-    selectMenuId: EventEmitter<number> =new EventEmitter();
-
-    menuItems: MenuItem[]= [
-      {
-        id:1,   descrizione: 'home', selezionato: true
-
-      },
-      {
-        id:2,   descrizione: 'Lista videogiochi', selezionato: true
-
-      },{
-        id:3,   descrizione: 'modifica', selezionato: true
-
-      },
-      {
-        id:4,   descrizione: 'detail', selezionato: true
-      }
-    ]*/
+  
     menuItems: MenuItem[] = [
       {
         id: 1, descrizione: 'Home', url: '/portale/home'
@@ -39,11 +21,28 @@ export class MenuComponentComponent implements OnInit {
       {
         id: 3, descrizione: 'Modifica', url: '/portale/edit-game-component'
       },
+      {
+       id: 4, descrizione: 'Login', url: '/login'
+      },
       
     ];
-  constructor() { }
+  constructor(private router:Router) {
+    
 
+   }
+    
   ngOnInit(): void {
+   
   }
-  
+  logout(){
+    sessionStorage.removeItem('name');
+    this.router.navigateByUrl('/login');
+
+  }
+
+  textUser(){
+    
+ 
+
+  }
 }

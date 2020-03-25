@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { UtentiService } from 'src/app/services/utenti-service/utenti.service';
+import { Utente } from 'src/app/model/utente';
+import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
+import { Subject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -10,32 +14,52 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 //DemoRoutingModule
 export class LoginComponent implements OnInit {
 
-  
+  utenti:Utente[];
 		name: string;
 		password: string;
 	
-  /*
-  this.form = {
-    name: "",
-    password: "",
-  }*/
-  constructor(private router:Router) { 
+    private loggedUser: Subject<string>= new Subject();
+    loggedUser$: Observable<string>=this.loggedUser.asObservable();
+
+    constructor(private router:Router,private g:UtentiService ) { 
     
   }
+
+  
   public OnClickLogin(): void {
-    if(this.name != null && this.password){
+
+    if(this.name != null && this.password !=null){
 		console.group( "Form View-Model" );
 		console.log( "Name:", this.name );
-		console.log( "Password:", this.password );
+	//	console.log( "Password:", this.password );
     console.groupEnd();
-    this.save();
-    this.router.navigateByUrl('/portale/home'); 
+    if(this.save()){
+      this.router.navigateByUrl('/portale/home'); 
+    }
+      else{
+        this.router.navigateByUrl('/login'); 
+      }
+   
 
     }
   }
-  save(){
-      sessionStorage.setItem("name", this.name);
-     // sessionStorage.setItem("password", this.password);
+  save():boolean {
+   
+
+  
+var indice;
+
+for (indice in this.utenti) {
+  
+  if(this.name == this.utenti[indice].username){
+        sessionStorage.setItem('name', this.name);
+        this.loggedUser.next(name);
+        return true;
+      }    
+      
+     
+    }
+    
   }
  
 stampa(){
@@ -43,6 +67,7 @@ stampa(){
 }
 
   ngOnInit() {
+    this.utenti=this.g.listaUtenti();
   }
 
 }
