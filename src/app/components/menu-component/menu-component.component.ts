@@ -12,7 +12,7 @@ import { LoginService } from 'src/app/services/loginservice/login.service';
   styleUrls: ['./menu-component.component.scss']
 })
 export class MenuComponentComponent implements OnInit {
-  icona:string;
+  utente:string;
   showLogin: boolean;
     menuItems: MenuItem[] = [
       {
@@ -31,7 +31,7 @@ export class MenuComponentComponent implements OnInit {
     ];
   constructor(private router:Router,private loginService:LoginService) {
    this.loginService.loggedUser$.subscribe(value =>{
-      this.icona=sessionStorage.getItem('name');
+      this.utente=sessionStorage.getItem('name');
      // this.checkLogin();
     })
    }
@@ -41,19 +41,16 @@ export class MenuComponentComponent implements OnInit {
   }
   checkLogin() {
 
-    this.icona = sessionStorage.getItem('name') != null ? 'A' :
+    this.utente = sessionStorage.getItem('name') != null ? 'A' :
       (sessionStorage.getItem('name') != null ? 'U' : '');
 this.showLogin = sessionStorage.getItem('name')==null && sessionStorage.getItem('admin')==null;
   }
   logout(){
     sessionStorage.clear();
+    this.utente=null;
     this.router.navigateByUrl('/login');
 
   }
-  public onClickLogout() {
-    sessionStorage.clear()
-    this.checkLogin();
-    this.router.navigateByUrl('/login');
-  }
+ 
 
 }
