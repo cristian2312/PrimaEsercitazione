@@ -39,14 +39,18 @@
     
       
     <body>
+      
 <ul>
     <li *ngFor="let menuItem of menuItems" routerLink='{{menuItem.url}}' routerLinkActive="active" >
-        <a >
+        <a *ngIf="checkAdmin()" >
             {{menuItem.descrizione}}
         </a>
         
     </li>
-    <li>
+    <li *ngIf="!checkLogin()">
+      <a routerLink="/login" routerLinkActive="active">Login</a>
+    </li>
+    <li *ngIf="checkLogin()">
     <a (click)="logout()">Logout</a>
   </li>
   <li>
@@ -54,12 +58,15 @@
   </li>
     
 </ul>
-</body>
-       <!-- <ul>
-            <li routerLink="/home" routerLinkActive="active">home</li>
-            <li routerLink="/game-list-component" routerLinkActive="active">Game List</li>
-            <li routerLink="/edit-game-component" routerLinkActive="active">Edit game</li>
+<!--
+        <ul>
+            <li routerLink="/portale/home" routerLinkActive="active">{{menuItems[0].descrizione}}</li>
+            <li routerLink="/portale/game-list-component" routerLinkActive="active">Game List</li>
+           <li *ngIf="checkAdmin()">
+            <a routerLink="/portale/edit-game-component" routerLinkActive="active">Edit game</a>
+           </li>
             <li routerLink="/login" routerLinkActive="active">Login al Sito</li>
          
-        </ul>-->    
+        </ul>  -->
    
+      </body>

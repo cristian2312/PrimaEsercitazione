@@ -24,15 +24,15 @@ export class MenuComponentComponent implements OnInit {
       {
         id: 3, descrizione: 'Modifica', url: '/portale/edit-game-component'
       },
-      {
+     /* {
        id: 4, descrizione: 'Login', url: '/login'
-      },
+      },*/
       
     ];
   constructor(private router:Router,private loginService:LoginService) {
    this.loginService.loggedUser$.subscribe(value =>{
       this.utente=sessionStorage.getItem('name');
-     // this.checkLogin();
+    // this.checkLogin();
     })
    }
     
@@ -41,11 +41,23 @@ export class MenuComponentComponent implements OnInit {
   }
   checkLogin() {
 
-    this.utente = sessionStorage.getItem('name') != null ? 'A' :
-      (sessionStorage.getItem('name') != null ? 'U' : '');
-this.showLogin = sessionStorage.getItem('name')==null && sessionStorage.getItem('admin')==null;
+  if(sessionStorage.getItem('name')==null){
+    return false;
+  }
+    else{
+    return true;
+    }
+  }
+  checkAdmin(){
+    if(sessionStorage.getItem('name')===null){
+    return false;
+  }else{
+    return sessionStorage.getItem('name')==='admin';
+
+  }
   }
   logout(){
+    
     sessionStorage.clear();
     this.utente=null;
     this.router.navigateByUrl('/login');
