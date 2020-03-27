@@ -10,7 +10,7 @@ import { UtentiService } from '../utenti-service/utenti.service';
 export class LoginService {
 
   utenti:Utente[];
-		
+		bo:boolean;
 private  loggedUser: Subject<string>= new Subject<string>();
   loggedUser$: Observable<string>=this.loggedUser.asObservable();
 
@@ -28,14 +28,17 @@ private  loggedUser: Subject<string>= new Subject<string>();
     console.groupEnd();
     if(this.save(name,password)){
       this.router.navigateByUrl('/portale/home'); 
+      this.bo=true;
     }
       else{
         this.router.navigateByUrl('/login'); 
+        this.bo= false;
       }
    
 
     }
   }
+
   save(name: string,password: string):boolean {
   
 var indice;

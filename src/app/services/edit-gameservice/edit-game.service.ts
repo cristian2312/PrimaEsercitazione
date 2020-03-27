@@ -12,6 +12,6 @@ export class EditGameService implements CanActivate{
     if(sessionStorage.getItem('name')!=='admin')
     this.router.navigateByUrl('/home');
     
-    return sessionStorage.getItem('name')=='admin';
+    return (sessionStorage.getItem('name')=='admin' || sessionStorage.getItem('name')=='cristian');
   }
 }

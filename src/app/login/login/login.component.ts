@@ -17,15 +17,16 @@ export class LoginComponent implements OnInit {
 
   name: string;
 		password: string;
-	
+    a:boolean;
      
     constructor(private router:Router,private service:LoginService ) { 
-    
+      this.service.bo
   }
 
 login(name: string,  password: string){
   
   this.service.OnClickLogin(this.name,this.password);
+  
 }
 
   ngOnInit() {

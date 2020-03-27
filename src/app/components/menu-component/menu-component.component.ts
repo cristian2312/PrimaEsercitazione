@@ -3,6 +3,7 @@ import { MenuItem } from 'src/app/model/menu-item';
 import { Router } from '@angular/router';
 import { LoginComponent } from 'src/app/login/login/login.component';
 import { LoginService } from 'src/app/services/loginservice/login.service';
+import { MenuServiceService } from 'src/app/services/menuservice/menu-service.service';
 
 
 
@@ -29,11 +30,12 @@ export class MenuComponentComponent implements OnInit {
       },*/
       
     ];
-  constructor(private router:Router,private loginService:LoginService) {
+  constructor(private router:Router,private loginService:LoginService,private l:MenuServiceService ) {
    this.loginService.loggedUser$.subscribe(value =>{
       this.utente=sessionStorage.getItem('name');
-    // this.checkLogin();
+    
     })
+    
    }
     
   ngOnInit(): void {
@@ -55,14 +57,21 @@ export class MenuComponentComponent implements OnInit {
     return sessionStorage.getItem('name')==='admin';
 
   }
-  }
-  logout(){
+}
+logout(){
     
-    sessionStorage.clear();
-    this.utente=null;
-    this.router.navigateByUrl('/login');
+  sessionStorage.clear();
+  this.utente=null;
+  this.router.navigateByUrl('/login');
 
-  }
+}
+checkUser(descrizione: string){
+  if(sessionStorage.getItem('name')==='cristian' && descrizione=="Modifica"){
+  return false;
+}else 
+  return true;
+
+}
  
 
 }

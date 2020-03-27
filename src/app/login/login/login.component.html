@@ -1,16 +1,23 @@
 
-<form (submit)="login(name,password)" >
+<form #myForm="ngForm" (ngSubmit)="login(name,password)" >
+   
     <div >
-        <label >Name:</label>
-        <input type="text" name="name" [(ngModel)]="name"  >
+        <label for="name" >Name:</label>
+        <input type="text" name="name" id="name" required [(ngModel)]="name" #nameControl="ngModel">
     </div>
+    <div *ngIf="nameControl.invalid && nameControl.dirty"><span>
+        Il nome obbligatorio
+    </span></div>
     <div >
-        <label>Password:</label>
-        <input type="password" name="password" [(ngModel)]="password" >
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required #passwordControl="ngModel">
     </div>
+    <div *ngIf="passwordControl.invalid && passwordControl.dirty"><span>
+       password obbligatoria
+    </span></div>
     <div >
         
-        <button type="submit" >
+        <button type="submit" [disabled]="!myForm.valid"  >
             Conferma
         </button>
     
