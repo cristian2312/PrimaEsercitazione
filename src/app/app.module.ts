@@ -16,6 +16,7 @@ import { LoginGuardService } from './service/login-guard.service';
 import { Routes, RouterModule } from '@angular/router';
 import { MenuServiceService } from './services/menuservice/menu-service.service';
 import { EditGameService } from './services/edit-gameservice/edit-game.service';
+import { LoginAdminService } from './services/LoginAdmin/LoginAdmin.service';
 
 
 const appRoutes: Routes = [
@@ -23,13 +24,13 @@ const appRoutes: Routes = [
     path: 'portale', canActivateChild: [LoginGuardService], children:[
   { path: 'home', component: HomeComponent },
   { path: 'game-list-component', component: GamesListComponentComponent },
-  { path: 'edit-game-component', component: EditGameComponentComponent ,canActivate:[EditGameService]},
+  { path: 'edit-game-component', component: EditGameComponentComponent ,canActivate:[LoginAdminService]},
   { path: 'game-detail-component', component: GameDetailComponentComponent},
     ]
  },
  
   { path: 'login', component: LoginComponent ,canActivate:[LoginGuardService] },
-  {path:'menu-component', component:MenuComponentComponent, canActivate:[MenuServiceService]},
+  {path:'menu-component', component:MenuComponentComponent, canActivate:[LoginAdminService]},
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginGuardService implements CanActivateChild,CanActivate {
+export class LoginGuardService implements CanActivateChild{
 
   constructor( private router: Router) { }
   canActivate(): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {

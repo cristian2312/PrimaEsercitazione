@@ -42,7 +42,7 @@
       
 <ul>
     <li *ngFor="let menuItem of menuItems" routerLink='{{menuItem.url}}' routerLinkActive="active" >
-        <a *ngIf="checkAdmin()" >
+        <a *ngIf="checkAdmin(menuItem.descrizione)" >
             {{menuItem.descrizione}}
         </a>
         

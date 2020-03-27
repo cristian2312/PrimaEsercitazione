@@ -50,13 +50,19 @@ export class MenuComponentComponent implements OnInit {
     return true;
     }
   }
-  checkAdmin(){
+  checkAdmin(d:string){
     if(sessionStorage.getItem('name')===null){
     return false;
-  }else{
-    return sessionStorage.getItem('name')==='admin';
+  }else {
+    if(sessionStorage.getItem('name')!=='admin' && d=='Modifica'){
+          return false;
+        }
+    else if(sessionStorage.getItem('name')!=='admin'){
+      return true;
+    }
+  } return sessionStorage.getItem('name')==='admin';
 
-  }
+  
 }
 logout(){
     
@@ -65,11 +71,11 @@ logout(){
   this.router.navigateByUrl('/login');
 
 }
-checkUser(descrizione: string){
-  if(sessionStorage.getItem('name')==='cristian' && descrizione=="Modifica"){
-  return false;
-}else 
+checkUser(){
+  if(sessionStorage.getItem('name')!=='admin'){
   return true;
+}else 
+  return false;
 
 }
  
