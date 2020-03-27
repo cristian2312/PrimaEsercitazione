@@ -1,4 +1,4 @@
-
+<!--
 <form #myForm="ngForm" (ngSubmit)="login(name,password)" >
    
     <div >
@@ -22,5 +22,25 @@
         </button>
     
     </div>
+</form>-->
+<form [formGroup]="myform" (ngSubmit)="login()">
+  
+    <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" formControlName="name">
+    </div>
+    <div *ngIf="nameControl.status === 'INVALID' && nameControl.dirty">
+        <span>Il Nome è obbligatorio</span>
+    </div>
+    <div >
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" formControlName="password">
+    </div>
+    <div *ngIf="myform.get('password').status === 'INVALID' && myform.get('password').dirty">
+        <span>la password è obbligatorio</span>
+    </div>
+   
+    <button type="submit" [disabled]="myform.status === 'INVALID'">Submit</button>
+  
 </form>
 

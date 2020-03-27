@@ -17,14 +17,27 @@ export class LoginComponent implements OnInit {
 
   name: string;
 		password: string;
-    a:boolean;
-     
-    constructor(private router:Router,private service:LoginService ) { 
+ 
+     myform:FormGroup;
+     get nameControl(): FormControl{
+      return this.myform.get('name') as FormControl;
+    }
+    get passwordControl(): FormControl{
+      return this.myform.get('password') as FormControl;
+    }
+    constructor(private router:Router,private service:LoginService ,private fb:FormBuilder) { 
+    this.myform= this.fb.group({
+        name:['',Validators.required],
+        password:['',Validators.required]
+     })
      
   }
-
-login(name: string,  password: string){
   
+  
+ 
+login(){
+  this.name= this.nameControl.value,
+      this.password= this.passwordControl.value
   this.service.OnClickLogin(this.name,this.password);
   
 }
