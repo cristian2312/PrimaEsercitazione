@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     a:boolean;
      
     constructor(private router:Router,private service:LoginService ) { 
-      this.service.bo
+     
   }
 
 login(name: string,  password: string){
