@@ -5,18 +5,22 @@ import { GameItem } from 'src/app/model/game-item';
   providedIn: 'root'
 })
 export class GameListServiceService {
-  private listaVideogiochi: GameItem[]=[
-
+  public listaVideogiochi: GameItem[]=[
 
     {
-      id:1,nome: 'fifa20',descrizione: 'gioco di calcio',	genere: 'sport',rating: 'aaa',prezzo: 200,anno_uscita: new Date()
+      id:0, nome: 'fifa20',descrizione: 'gioco di calcio',	genere: 'sport',rating: 'aaa',prezzo: 200,anno_uscita: new Date()
 
     },
     {
-      id:2,nome: 'GranTurismo',descrizione: 'corsa',	genere: 'sport',rating: '5',prezzo: 120,anno_uscita: new Date()
+      id:1, nome: 'GranTurismo',descrizione: 'corsa',	genere: 'sport',rating: '5',prezzo: 120,anno_uscita: new Date()
 
-    },{
-      id:3,nome: 'Sonic Generations',descrizione: 'animazione',	genere: 'animazione',rating: 'sonic',prezzo: 50,anno_uscita: new Date()
+    },
+    {
+      id:2, nome: 'Sonic Generations',descrizione: 'animazione',	genere: 'animazione',rating: 'sonic',prezzo: 50,anno_uscita: new Date()
+
+    },
+    {
+      id:3, nome: 'Football manager',descrizione: 'animazione',	genere: 'animazione',rating: 'sonic',prezzo: 50,anno_uscita: new Date()
 
     }
   ]
@@ -26,6 +30,11 @@ export class GameListServiceService {
   }
   lista(){ //  get di ritorno la lista dei viedogiochi 
     return this.listaVideogiochi;
+  }
+
+  getGameListById(id: string){
+
+    return this.listaVideogiochi[id];
   }
     
 

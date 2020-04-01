@@ -56,7 +56,9 @@
   <li>
     <a>{{utente}}</a>
   </li>
-    
+  <li *ngIf="!checkLogin()">
+   <a routerLink="/registration" routerLinkActive="active"> Registrazione </a>
+  </li>
 </ul>
 <!--
         <ul>

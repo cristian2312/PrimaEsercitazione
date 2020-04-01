@@ -1,9 +1,10 @@
 <ul>
-    <li *ngFor="let gameItem of gameItems" >
+    <li *ngFor="let gameItem of gameItems" [routerLink]="['game-detail-component',gameItem.id]" routerLinkActive="active">
         <span>
-            {{gameItem.nome}}
-    
+            {{gameItem.nome}} 
         </span>
-       <button (click)="selectGameItem(gameItem.descrizione)">{{gameItem.descrizione}}</button>
+     
     </li>
+    <button>Modifica</button>
 </ul>
+<router-outlet></router-outlet>

@@ -9,8 +9,11 @@ import { GameListServiceService } from 'src/app/services/gamelist/game-list-serv
 })
 export class GamesListComponentComponent implements OnInit {
   
-  @Output()
+ /* @Output()
   selectGameId: EventEmitter<number> =new EventEmitter();
+*/
+  @Output()
+ gameDetail;
   constructor(private g:GameListServiceService) { }
   
   gameItems: GameItem[];
@@ -18,8 +21,9 @@ export class GamesListComponentComponent implements OnInit {
     this.gameItems= this.g.lista();
   }
 
-  selectGameItem(id:number){
+ /* selectGameItem(id:number){
     this.selectGameId.emit(id);
-  }
+  }*/
+  
 
 }

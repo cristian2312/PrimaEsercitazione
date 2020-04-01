@@ -25,6 +25,7 @@ export class MenuComponentComponent implements OnInit {
       {
         id: 3, descrizione: 'Modifica', url: '/portale/edit-game-component'
       },
+      
      /* {
        id: 4, descrizione: 'Login', url: '/login'
       },*/

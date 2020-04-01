@@ -1,0 +1,91 @@
+aaa
+
+<form [formGroup]="registraForm" (ngSubmit)="registra()">
+
+    <div>
+        <label for="username">Username</label>
+        <input type="text" id="username" formControlName="username">
+    </div>
+    <div *ngIf="usernameControl.status === 'INVALID' && usernameControl.dirty">
+        <span>L'Username è obbligatorio</span>
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" formControlName="password">
+    </div>
+    <div *ngIf="passwordControl.status === 'INVALID' && passwordControl.dirty">
+        <span>la password è obbligatorio</span>
+    </div>
+
+    <div>
+        <label for="email">Email</label>
+        <input type="mail" id="email" formControlName="email">
+    </div>
+    <div *ngIf="emailControl.status === 'INVALID' && emailControl.dirty">
+        <span>Email obbligatoria</span>
+    </div>
+
+    <div>
+        <label for="name">Name :</label>
+        <input type="text" id="name" formControlName="name">
+    </div>
+    <div *ngIf="nameControl.status === 'INVALID' && nameControl.dirty">
+        <span>Nome obbligatorio</span>
+    </div>
+
+    <div>
+        <label for="lastname">Last name</label>
+        <input type="text" id="lastname" formControlName="lastname">
+    </div>
+    <div *ngIf="lastNameControl.status === 'INVALID' && lastNameControl.dirty">
+        <span>Lastname </span>
+    </div>
+
+    <div>
+        <label for="birthdate">Birthdate :</label>
+        <input type="date" id="birthdate" formControlName="birthdate">
+    </div>
+    <div *ngIf="birthdateControl.status === 'INVALID' && birthdateControl.dirty">
+        <span>Data nascita obbligatoria</span>
+    </div>
+
+    <div>
+        <label for="birthcity">Birthcity :</label>
+        <input type="text" id="birthcity" formControlName="birthcity">
+    </div>
+    <div *ngIf="birthcityControl.status === 'INVALID' && birthcityControl.dirty">
+        <span>Luogo nascita obb</span>
+    </div>
+    <label for="sex" >Sex :</label>
+
+   
+      <div>
+        <input type="radio" id="male" name="sex" value="male" formControlName="sex"
+               checked>
+        <label for="sex">male</label>
+      </div>
+      
+      <div>
+        <input type="radio" id="female" name="sex" value="female" formControlName="sex">
+        <label for="female">Female</label>
+      </div>
+      
+      
+      <div *ngIf="sexControl.status === 'INVALID' && sexControl.dirty">
+        <span>Sex obbligatorio</span>
+    </div>
+
+    <div>
+        <label for="newslettersubscription">Newsletter subcription :</label>
+        <input type="checkbox" id="newslettersubscription" name="newslettersubscription" formControlName="newslettersubscription" checked>
+       
+      </div>
+      <div *ngIf="newslettersubscriptionControl.status === 'INVALID' && newslettersubscriptionControl.dirty">
+        <span>Sex obbligatorio</span>
+    </div>
+
+    <button type="submit" [disabled]="registraForm.status === 'INVALID'">Submit</button>
+
+</form>
+
+    
