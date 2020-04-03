@@ -1,10 +1,44 @@
+<form [formGroup]="gameForm" (ngSubmit)="aggiungiGioco()">
+    <input formControlName="nome" placeholder="Nome">
+    <input formControlName="descrizione" placeholder="descrizione">
+    <input formControlName="genere" placeholder="Genere">
+    <input formControlName="rating" placeholder="">
+    <input formControlName="prezzo" placeholder="">
+    <input formControlName="anno_uscita" placeholder="">
+    <button type="submit">Aggiungi</button>
+</form>
+
 <ul>
-    <li *ngFor="let gameItem of gameItems" [routerLink]="['game-detail-component',gameItem.id]" routerLinkActive="active">
+    <li *ngFor="let game of gameList | async">
         <span>
-            {{gameItem.nome}} 
+            {{game.nome}}
         </span>
-     
+        <button [routerLink]="['game-detail-component', game.id]" routerLinkActive="active">Dettaglio</button>
+        <button (click)="eliminaGioco(game.id)">Elimina</button>
     </li>
-    <button>Modifica</button>
+
 </ul>
+<ng-container *ngIf="gameDetail != null">
+    <form [formGroup]="gameEditForm" (ngSubmit)="modificaGioco()">
+        <input formControlName="nome" placeholder="Nome">
+        <input formControlName="descrizione" placeholder="descrizione">
+        <input formControlName="genere" placeholder="Genere">
+        <input formControlName="rating" placeholder="Genere">
+        <input formControlName="prezzo" placeholder="Genere">
+        <input formControlName="anno_uscita" placeholder="Genere">
+        <button type="submit">Modifica</button>
+    </form>
+</ng-container>
 <router-outlet></router-outlet>
+<!--
+<div *ngFor="let gameItem of gameList">
+    <p>{{gameItem.nome}}</p>
+    <button (click)="getDettaglio(gameItem.id)">Dettaglio</button>
+    <button (click)="eliminaGioco(gameItem.id)">Elimina</button>
+</div>-->
+
+
+
+<!--<router-outlet></router-outlet>
+
+[routerLink]="['game-detail-component', gameItem.id]" routerLinkActive="active-->

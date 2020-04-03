@@ -55,7 +55,7 @@ export class RegistrationComponent implements OnInit {
   })}
 
   registra(){
-    
+    console.log(this.usernameControl.value);
   }
   ngOnInit(): void {
   }

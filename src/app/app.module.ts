@@ -17,7 +17,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MenuServiceService } from './services/menuservice/menu-service.service';
 import { EditGameService } from './services/edit-gameservice/edit-game.service';
 import { LoginAdminService } from './services/LoginAdmin/LoginAdmin.service';
-
+import { HttpClientModule } from '@angular/common/http';
 import { RegistrationComponent } from './registration/registration.component';
 
 
@@ -29,7 +29,7 @@ const appRoutes: Routes = [
     { path: 'game-detail-component/:id', component: GameDetailComponentComponent}
 ]}, 
   { path: 'edit-game-component', component: EditGameComponentComponent ,canActivate:[LoginAdminService]},
- // { path: 'game-detail-component', component: GameDetailComponentComponent},
+ 
     ] },
  
   { path: 'login', component: LoginComponent ,canActivate:[LoginGuardService] },
@@ -57,7 +57,8 @@ const appRoutes: Routes = [
     //DemoRoutingModule,
   FormsModule,
   ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
