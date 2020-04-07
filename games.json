@@ -35,22 +35,81 @@
       "prezzo": "9,99",
       "anno_uscita": "10 08 2020",
       "id": 3
+    },
+    {
+      "nome": "needforspeed",
+      "descrizione": "macchine",
+      "genere": "sport",
+      "rating": "5",
+      "prezzo": "25",
+      "anno_uscita": "10 10 2014",
+      "id": 4
+    },
+    {
+      "nome": "call of duty",
+      "descrizione": "guerra",
+      "genere": "sparatutto",
+      "rating": "4",
+      "prezzo": "420",
+      "anno_uscita": "10 02 2015",
+      "id": 5
+    },
+    {
+      "nome": "GTA",
+      "descrizione": "guerra",
+      "genere": "sparatutto",
+      "rating": "5",
+      "prezzo": "20",
+      "anno_uscita": "10 02 2010",
+      "id": 6
     }
   ],
-
-  
-  "users":[
-     {
+  "utenti": [
+    {
       "id": 0,
-      "nome": "fifa20sdad6s",
-      "descrizione": "gioco di calcio",
-      "genere": "sport",
-      "rating": "4",
-      "prezzo": 200,
-      "anno_uscita": "08 20 2020"
+      "username": "cri",
+      "password": "muchacho"
+    },
+    {
+      "id": 1,
+      "username": "ma",
+      "password": "lo"
+    },
+    {
+      "username": "gfdg",
+      "password": "fdgd",
+      "email": "df",
+      "name": "fgd",
+      "lastname": "dgfd",
+      "birthdate": "dfffg",
+      "birthcity": "fdgd",
+      "sex": "male",
+      "newslettersubscription": true,
+      "id": 2
+    },
+    {
+      "username": "gfdg",
+      "password": "fdgd",
+      "email": "df",
+      "name": "fgd",
+      "lastname": "dgfd",
+      "birthdate": "dfffg",
+      "birthcity": "fdgd",
+      "sex": "male",
+      "newslettersubscription": true,
+      "id": 3
+    },
+    {
+      "username": "mbappe",
+      "password": "admin",
+      "email": "mbappe@psg.com",
+      "name": "Kylian",
+      "lastname": "Mbappe",
+      "birthdate": "12 20 1998",
+      "birthcity": "parigi",
+      "sex": "male",
+      "newslettersubscription": true,
+      "id": 4
     }
-
   ]
-
 }
-  

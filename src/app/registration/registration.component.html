@@ -1,8 +1,7 @@
-aaa
 
 <form [formGroup]="registraForm" (ngSubmit)="registra()">
-
-    <div>
+    
+     <div>
         <label for="username">Username</label>
         <input type="text" id="username" formControlName="username">
     </div>
@@ -17,7 +16,7 @@ aaa
         <span>la password è obbligatorio</span>
     </div>
 
-    <div>
+  <div>
         <label for="email">Email</label>
         <input type="mail" id="email" formControlName="email">
     </div>
@@ -25,7 +24,7 @@ aaa
         <span>Email obbligatoria</span>
     </div>
 
-    <div>
+   <div>
         <label for="name">Name :</label>
         <input type="text" id="name" formControlName="name">
     </div>
@@ -43,7 +42,7 @@ aaa
 
     <div>
         <label for="birthdate">Birthdate :</label>
-        <input type="date" id="birthdate" formControlName="birthdate">
+        <input type="text" id="birthdate" formControlName="birthdate">
     </div>
     <div *ngIf="birthdateControl.status === 'INVALID' && birthdateControl.dirty">
         <span>Data nascita obbligatoria</span>
@@ -56,7 +55,7 @@ aaa
     <div *ngIf="birthcityControl.status === 'INVALID' && birthcityControl.dirty">
         <span>Luogo nascita obb</span>
     </div>
-    <label for="sex" >Sex :</label>
+   <label for="sex" >Sex :</label>
 
    
       <div>
@@ -77,12 +76,13 @@ aaa
 
     <div>
         <label for="newslettersubscription">Newsletter subcription :</label>
-        <input type="checkbox" id="newslettersubscription" name="newslettersubscription" formControlName="newslettersubscription" checked>
+        <input type="checkbox" id="newslettersubscription" name="newslettersubscription" formControlName="newslettersubscription" >
        
       </div>
       <div *ngIf="newslettersubscriptionControl.status === 'INVALID' && newslettersubscriptionControl.dirty">
         <span>Sex obbligatorio</span>
     </div>
+     
 
     <button type="submit" [disabled]="registraForm.status === 'INVALID'">Submit</button>
 

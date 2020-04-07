@@ -1,0 +1,75 @@
+{
+  "games": [
+    {
+      "id": 0,
+      "nome": "fifa20sdad6s",
+      "descrizione": "gioco di calcio",
+      "genere": "sport",
+      "rating": "4",
+      "prezzo": 200,
+      "anno_uscita": "08 20 2020"
+    },
+    {
+      "id": 1,
+      "nome": "GranTurismo",
+      "descrizione": "corsa",
+      "genere": "sport",
+      "rating": "",
+      "prezzo": 120,
+      "anno_uscita": "01 06 2010"
+    },
+    {
+      "id": 2,
+      "nome": "Sonic Generations",
+      "descrizione": "animazione",
+      "genere": "animazione",
+      "rating": "sonic",
+      "prezzo": 50,
+      "anno_uscita": "02 10 2015"
+    },
+    {
+      "nome": "Football Manager",
+      "descrizione": "calcio virtuale",
+      "genere": "sport",
+      "rating": "5",
+      "prezzo": "9,99",
+      "anno_uscita": "10 08 2020",
+      "id": 3
+    },
+    {
+      "nome": "needforspeed",
+      "descrizione": "macchine",
+      "genere": "sport",
+      "rating": "5",
+      "prezzo": "25",
+      "anno_uscita": "10 10 2014",
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "username": "bentancucdxxr",
+      "password": "admin",
+      "Email": "bentancur@ciao.it",
+      "Name": "rodrigo",
+      "LastName": "",
+      "Birthdate": "08 20 2020",
+      "BirthCity": "",
+      "Sex": "male",
+      "NewsletterSubscription": " true"
+    },
+    {
+      "id": 1,
+      "username": "bentancur",
+      "password": "admin",
+      "Email": "bentancur@ciao.it",
+      "Name": "rodrigo",
+      "LastName": "",
+      "Birthdate": "08 20 2020",
+      "BirthCity": "",
+      "Sex": "male",
+      "NewsletterSubscription": " true"
+    }
+  ]
+}

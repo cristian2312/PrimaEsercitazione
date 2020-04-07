@@ -1,12 +1,13 @@
 export interface Utente {
-    username: string ;
-    password: string;
-    Email: String
-    Name: String
-	LastName: String
-	Birthdate: Date
-	BirthCity: String
-	Sex: String
-	NewsletterSubscription: boolean
+	//id:number,
+    username: string,
+    password: string
+    email: string;
+    name: string;
+	lastname: string;
+	birthdate: string; 
+	birthcity: string;
+	sex: string;
+	newslettersubscription: string;
 
 }
